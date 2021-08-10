@@ -3,6 +3,12 @@
 if (global.gasolina>=10){
 	/*game over*/
 	audio_stop_sound(sonido_nave);
+	
+	if(global.puntos > int64(global.puntos_anterior)){ 
+		ini_open("proyecto_ovni.ala"); 
+		ini_write_string("puntos", "puntos_anteriores", string(global.puntos)); 
+		ini_close(); 
+ }
 	room_goto(game_over);
 }
 
@@ -14,7 +20,7 @@ if (room==game_over and (keyboard_check_pressed(vk_space) or mouse_check_button_
 	room_goto(Sala1);
 }
 
-if (room==portada){
+if (room==Sala1){
 	
 	if(global.puntos >= 100){ 
  global.nivel = 2; 
@@ -65,5 +71,3 @@ if(global.puntos >= 1250){
  global.nivel = 15; 
 } 
 	}
-
-show_debug_message(global.nivel);

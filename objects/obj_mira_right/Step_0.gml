@@ -24,7 +24,7 @@ if (objeto_derecha !=noone and keyboard_check_pressed(vk_right)){
 
 var objeto_bidon1 = instance_place(x,y,obj_bidon);
 if (objeto_bidon1 !=noone and keyboard_check_pressed(vk_right)){
-	if (global.gasolina+2>=10){
+	if (global.gasolina-2<=0){
 		global.gasolina=0;
 	}
 	else{
@@ -40,7 +40,7 @@ if (objeto_bidon1 !=noone and keyboard_check_pressed(vk_right)){
 
 var objeto_bidon2 = instance_place(x,y,obj_bidon_derecha);
 if (objeto_bidon2 !=noone and keyboard_check_pressed(vk_right)){
-	if (global.gasolina+2>=10){
+	if (global.gasolina-2<=0){
 		global.gasolina=0;
 	}
 	else{
